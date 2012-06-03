@@ -1,4 +1,5 @@
 == Welcome back to Rails
 
-Going back to Rails programming after a month break. 
-How ? Following the Ruby on Rails tutorial of Michael Hartl, and building the micro-bloging app he presents.
+Going back to Rails programming after a month break.
+
+How ? Following the Ruby on Rails tutorial of Michael Hartl, and building the micro-bloging app he presents at http://ruby.railstutorial.org/ruby-on-rails-tutorial-book
