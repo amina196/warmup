@@ -4,47 +4,62 @@ describe "Static pages" do
 
   describe "Home page" do
 
-    it "should have the h1 'Amina'" do
-      visit '/static_pages/home'
+    it "should have the h1 'Home Page'" do
+      visit home_path
       page.should have_selector('h1', :text => 'Home page')
     end
 
-    it "should have the title 'Home'" do
-      visit '/static_pages/home'
+    it "should have the title 'Warmup App | Home'" do
+      visit home_path
       page.should have_selector('title',
-                        :text => "Amina's App | Home")
+                        :text => "Warmup App | Home")
     end
   end
 
   describe "Help page" do
 
     it "should have the h1 'Help'" do
-      visit '/static_pages/help'
+      visit contact_path
       page.should have_selector('h1', :text => 'Help page')
     end
 
     it "should have the title 'Help'" do
-      visit '/static_pages/help'
+      visit help_path
       page.should have_selector('title',
-                        :text => "Amina's app | Help")
+                        :text => "Warmup app | Help")
     end
   end
 
   describe "About page" do
 
     it "should have the h1 'About Page'" do
-      visit '/static_pages/about'
+      visit about_path
       page.should have_selector('h1', :text => 'About page')
     end
 
     it "should have the title 'Amina's app'" do
-      visit '/static_pages/about'
-      page.should have_selector('title', :text => "Aminas App | About")
+      visit about_path
+      page.should have_selector('title', :text => "Warmup App | About")
     end
 
     it "should not have the custom title 'Amina's app | About'" do
-      visit 'static_pages/about'
-      page.should_not have_selector('title', text: "Amina's app | About")
+      visit about_path
+      page.should_not have_selector('title', text: "Warmup app | About")
+    end
+
+  end
+
+
+  describe "Contact Page" do
+
+    it "should have the h1 'Contact Page'" do
+      visit contact_path
+      page.should have_selector('h1', text: 'Contact Page')
+    end
+
+    it "should have the title 'Warmup App | Contact" do
+      visit contact_path
+      page.should have_selector('title', text: "Warmup App | Contact")
     end
 
   end
