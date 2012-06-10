@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html>
+
   <head>
-    <title>Amina's App | <%= yield(:title) %></title>
-    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <title><%= full_title(yield(:title)) %></title>
+    <%= stylesheet_link_tag    "application", :media => "all" %> <!-- includes application.css-->
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
   </head>
+
   <body>
     <%= yield %>
   </body>
+
 </html>

@@ -1,5 +1,5 @@
 require 'spec_helper'
-
+#run all tests : Ctrl - Shift - T
 describe "Static pages" do
 
   describe "Home page" do
@@ -32,15 +32,20 @@ describe "Static pages" do
 
   describe "About page" do
 
-    it "should have the h1 'About Us'" do
+    it "should have the h1 'About Page'" do
       visit '/static_pages/about'
       page.should have_selector('h1', :text => 'About page')
     end
 
-    it "should have the title 'About Us'" do
+    it "should have the title 'Amina's app'" do
       visit '/static_pages/about'
-      page.should have_selector('title',
-                    :text => "Amina's app | About")
+      page.should have_selector('title', :text => "Aminas App | About")
     end
+
+    it "should not have the custom title 'Amina's app | About'" do
+      visit 'static_pages/about'
+      page.should_not have_selector('title', text: "Amina's app | About")
+    end
+
   end
 end
