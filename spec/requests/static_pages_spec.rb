@@ -9,10 +9,10 @@ describe "Static pages" do
       page.should have_selector('h1', :text => 'Home page')
     end
 
-    it "should have the title 'Warmup App | Home'" do
+    it "should have the title 'IDK | Home'" do
       visit home_path
       page.should have_selector('title',
-                        :text => "Warmup App | Home")
+                        :text => "IDK | Home")
     end
   end
 
@@ -26,40 +26,39 @@ describe "Static pages" do
     it "should have the title 'Help'" do
       visit help_path
       page.should have_selector('title',
-                        :text => "Warmup app | Help")
+                        :text => "IDK | Help")
     end
   end
 
   describe "About page" do
 
-    it "should have the h1 'About Page'" do
+    it "should have the h1 'IDK | About'" do
       visit about_path
       page.should have_selector('h1', :text => 'About page')
     end
 
-    it "should have the title 'Amina's app'" do
+    it "should have the title 'IDK | About'" do
       visit about_path
-      page.should have_selector('title', :text => "Warmup App | About")
+      page.should have_selector('title', :text => "IDK | About")
     end
 
-    it "should not have the custom title 'Amina's app | About'" do
+    it "should not have the custom title 'IDK | About'" do
       visit about_path
-      page.should_not have_selector('title', text: "Warmup app | About")
+      page.should_not have_selector('title', text: "IDK | About")
     end
 
   end
 
 
   describe "Contact Page" do
+    before { visit contact_path }
 
     it "should have the h1 'Contact Page'" do
-      visit contact_path
       page.should have_selector('h1', text: 'Contact Page')
     end
 
-    it "should have the title 'Warmup App | Contact" do
-      visit contact_path
-      page.should have_selector('title', text: "Warmup App | Contact")
+    it "should have the title 'IDK | Contact" do
+      page.should have_selector('title', text: "IDK | Contact")
     end
 
   end
