@@ -1,6 +1,6 @@
 Warmup::Application.routes.draw do
-  get "users/new"
 
+  resources :users  
   #static pages
  
 
@@ -14,6 +14,7 @@ Warmup::Application.routes.draw do
                                           # called help_path that returns the path to that page
   match '/about', to: "static_pages#about"
   match '/contact', to: "static_pages#contact"
+  match '/signup', to: "users#new"
 
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase

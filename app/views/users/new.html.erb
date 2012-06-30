@@ -1,2 +1,26 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<h1> Sign up page</h1>
+
+<div class="row">
+	<div class="span6 offset3">
+		<%= form_for(@user) do |f|%>
+			<%= render 'shared/error_messages' %> 
+			
+			<%= f.label :name, "Enter your name" %>
+			<%= f.text_field :name %>
+
+			<%= f.label :lastname, "...and your last name" %>
+			<%= f.text_field :lastname %>
+
+			<%= f.label :email, "Don't forget the email" %>
+			<%= f.text_field :email %>
+
+			<%= f.label :password, "Now a password" %>
+			<%= f.password_field :password, placeholder: "Choose a strong one" %>
+
+			<%= f.label :password_confirmation, "Confirmation" %>
+			<%= f.password_field :password_confirmation, placeholder: "Enter the same thing as earlier" %>
+
+			<%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+		<% end %>
+	</div>
+</div>
